@@ -265,8 +265,7 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 		searchByIdField.setText("");
 		searchBySurnameField.setText("");
 
-		if (thisEmployee == null) {
-		} else if (thisEmployee.getEmployeeId() == 0) {
+		if (thisEmployee == null||thisEmployee.getEmployeeId() == 0) {
 		} else {
 			
 			while (!found && countGender < gender.length - 1) {
@@ -774,6 +773,7 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 				file = newFile;
 			}
 			catch (IOException e) {
+				System.out.println("ERROR" +e.getMessage());
 			}
 		}
 		changesMade = false;

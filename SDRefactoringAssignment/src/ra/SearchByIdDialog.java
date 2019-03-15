@@ -13,10 +13,11 @@ import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 
 public class SearchByIdDialog extends JDialog implements ActionListener {
-	EmployeeDetails parent;
-	JButton search, cancel;
-	JTextField searchField;
+	private EmployeeDetails parent;
+	private JButton search, cancel;
+	private JTextField searchField;
 
+	//constructor
 	public SearchByIdDialog(EmployeeDetails parent) {
 		setTitle("Search by Surname");
 		setModal(true);
@@ -32,7 +33,7 @@ public class SearchByIdDialog extends JDialog implements ActionListener {
 		setLocation(350, 250);
 		setVisible(true);
 	}
-	
+	//initialize search container
 	public Container searchPane() {
 		JPanel searchPanel = new JPanel(new GridLayout(3, 1));
 		JPanel textPanel = new JPanel();

@@ -153,6 +153,7 @@ public class RandomFile {
 			input.length();
 		} 
 		catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Error finding first file");
 		}
 		
 		return byteToStart;
@@ -182,8 +183,10 @@ public class RandomFile {
 				byteToStart = byteToStart + RandomAccessEmployeeRecord.SIZE;
 		}
 		catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(null, "Error!!");
 		}
 		catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Error");
 		}
 		return byteToStart;
 	}
@@ -200,8 +203,10 @@ public class RandomFile {
 				byteToStart = byteToStart - RandomAccessEmployeeRecord.SIZE;
 		}
 		catch (NumberFormatException e) {
+			JOptionPane.showMessageDialog(null, "Error");
 		}
 		catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Error");
 		}
 		return byteToStart;
 	}
@@ -216,6 +221,7 @@ public class RandomFile {
 			record.read(input);
 		} 
 		catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Error");
 		}
 		
 		thisEmp = record;
@@ -243,6 +249,7 @@ public class RandomFile {
 			}
 		}
 		catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Error");
 		}
 
 		return ppsExist;
@@ -263,6 +270,7 @@ public class RandomFile {
 			}
 		}
 		catch (IOException e) {
+			JOptionPane.showMessageDialog(null, "Error");
 		}
 
 		return someoneToDisplay;

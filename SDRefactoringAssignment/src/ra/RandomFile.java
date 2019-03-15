@@ -4,12 +4,10 @@ package ra;
  * 
  * This class is for accessing, creating and modifying records in a file
  * 
- * */
+ */
 
-import java.io.EOFException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
-import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
@@ -90,7 +88,7 @@ public class RandomFile {
 
 		return currentRecordStart - RandomAccessEmployeeRecord.SIZE;
 	}
-
+	//Change details for existing records
 	public void changeRecords(Employee newDetails, long byteToStart) {
 		long currentRecordStart = byteToStart;
 		RandomAccessEmployeeRecord record;

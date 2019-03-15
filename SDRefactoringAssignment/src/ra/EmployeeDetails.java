@@ -50,6 +50,8 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 	String[] gender = { "", "M", "F" };
 	String[] department = { "", "Administration", "Production", "Transport", "Management" };
 	String[] fullTime = { "", "Yes", "No" };
+	String gp = "growx, pushx";
+	String gpw = "growx, pushx, wrap";
 
 	private JMenuBar menuBar() {
 		JMenuBar menuBar = new JMenuBar();
@@ -111,24 +113,24 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 		JPanel searchPanel = new JPanel(new MigLayout());
 
 		searchPanel.setBorder(BorderFactory.createTitledBorder("Search"));
-		searchPanel.add(new JLabel("Search by ID:"), "growx, pushx");
-		searchPanel.add(searchByIdField = new JTextField(20), "width 200:200:200, growx, pushx");
+		searchPanel.add(new JLabel("Search by ID:"), gp);
+		searchPanel.add(searchByIdField = new JTextField(20), "width 200:200:200, "+ gp);
 		searchByIdField.addActionListener(this);
 		searchByIdField.setDocument(new JTextFieldLimit(20));
 		searchPanel.add(searchId = new JButton(new ImageIcon(
-				new ImageIcon("imgres.png").getImage().getScaledInstance(35, 20, java.awt.Image.SCALE_SMOOTH))),
-				"width 35:35:35, height 20:20:20, growx, pushx, wrap");
+				new ImageIcon("stuff/search.png").getImage().getScaledInstance(35, 20, java.awt.Image.SCALE_SMOOTH))),
+				"width 35:35:35, height 20:20:20, " + gpw);
 		searchId.addActionListener(this);
 		searchId.setToolTipText("Search Employee By ID");
 
-		searchPanel.add(new JLabel("Search by Surname:"), "growx, pushx");
-		searchPanel.add(searchBySurnameField = new JTextField(20), "width 200:200:200, growx, pushx");
+		searchPanel.add(new JLabel("Search by Surname:"), gp);
+		searchPanel.add(searchBySurnameField = new JTextField(20), "width 200:200:200, " + gp);
 		searchBySurnameField.addActionListener(this);
 		searchBySurnameField.setDocument(new JTextFieldLimit(20));
 		searchPanel.add(
-				searchSurname = new JButton(new ImageIcon(new ImageIcon("imgres.png").getImage()
+				searchSurname = new JButton(new ImageIcon(new ImageIcon("stuff/search.png").getImage()
 						.getScaledInstance(35, 20, java.awt.Image.SCALE_SMOOTH))),
-				"width 35:35:35, height 20:20:20, growx, pushx, wrap");
+				"width 35:35:35, height 20:20:20, " +gpw);
 		searchSurname.addActionListener(this);
 		searchSurname.setToolTipText("Search Employee By Surname");
 
@@ -169,16 +171,16 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 	private JPanel buttonPanel() {
 		JPanel buttonPanel = new JPanel();
 
-		buttonPanel.add(add = new JButton("Add Record"), "growx, pushx");
+		buttonPanel.add(add = new JButton("Add Record"), gp);
 		add.addActionListener(this);
 		add.setToolTipText("Add new Employee Record");
-		buttonPanel.add(edit = new JButton("Edit Record"), "growx, pushx");
+		buttonPanel.add(edit = new JButton("Edit Record"), gp);
 		edit.addActionListener(this);
 		edit.setToolTipText("Edit current Employee");
-		buttonPanel.add(deleteButton = new JButton("Delete Record"), "growx, pushx, wrap");
+		buttonPanel.add(deleteButton = new JButton("Delete Record"), gpw);
 		deleteButton.addActionListener(this);
 		deleteButton.setToolTipText("Delete current Employee");
-		buttonPanel.add(displayAll = new JButton("List all Records"), "growx, pushx");
+		buttonPanel.add(displayAll = new JButton("List all Records"), gp);
 		displayAll.addActionListener(this);
 		displayAll.setToolTipText("List all Registered Employees");
 
@@ -192,30 +194,30 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 
 		empDetails.setBorder(BorderFactory.createTitledBorder("Employee Details"));
 
-		empDetails.add(new JLabel("ID:"), "growx, pushx");
-		empDetails.add(idField = new JTextField(20), "growx, pushx, wrap");
+		empDetails.add(new JLabel("ID:"), gp);
+		empDetails.add(idField = new JTextField(20), gpw);
 		idField.setEditable(false);
 
-		empDetails.add(new JLabel("PPS Number:"), "growx, pushx");
-		empDetails.add(ppsField = new JTextField(20), "growx, pushx, wrap");
+		empDetails.add(new JLabel("PPS Number:"), gp);
+		empDetails.add(ppsField = new JTextField(20), gpw);
 
-		empDetails.add(new JLabel("Surname:"), "growx, pushx");
-		empDetails.add(surnameField = new JTextField(20), "growx, pushx, wrap");
+		empDetails.add(new JLabel("Surname:"), gp);
+		empDetails.add(surnameField = new JTextField(20), gpw);
 
-		empDetails.add(new JLabel("First Name:"), "growx, pushx");
-		empDetails.add(firstNameField = new JTextField(20), "growx, pushx, wrap");
+		empDetails.add(new JLabel("First Name:"), gp);
+		empDetails.add(firstNameField = new JTextField(20), gpw);
 
-		empDetails.add(new JLabel("Gender:"), "growx, pushx");
-		empDetails.add(genderCombo = new JComboBox<String>(gender), "growx, pushx, wrap");
+		empDetails.add(new JLabel("Gender:"), gp);
+		empDetails.add(genderCombo = new JComboBox<String>(gender), gpw);
 
-		empDetails.add(new JLabel("Department:"), "growx, pushx");
-		empDetails.add(departmentCombo = new JComboBox<String>(department), "growx, pushx, wrap");
+		empDetails.add(new JLabel("Department:"), gp);
+		empDetails.add(departmentCombo = new JComboBox<String>(department), gpw);
 
-		empDetails.add(new JLabel("Salary:"), "growx, pushx");
-		empDetails.add(salaryField = new JTextField(20), "growx, pushx, wrap");
+		empDetails.add(new JLabel("Salary:"), gp);
+		empDetails.add(salaryField = new JTextField(20), gpw);
 
-		empDetails.add(new JLabel("Full Time:"), "growx, pushx");
-		empDetails.add(fullTimeCombo = new JComboBox<String>(fullTime), "growx, pushx, wrap");
+		empDetails.add(new JLabel("Full Time:"), gp);
+		empDetails.add(fullTimeCombo = new JComboBox<String>(fullTime), gpw);
 
 		buttonPanel.add(saveChange = new JButton("Save"));
 		saveChange.addActionListener(this);
@@ -226,7 +228,7 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 		cancelChange.setVisible(false);
 		cancelChange.setToolTipText("Cancel edit");
 
-		empDetails.add(buttonPanel, "span 2,growx, pushx,wrap");
+		empDetails.add(buttonPanel, "span 2, " + gpw);
 
 		for (int i = 0; i < empDetails.getComponentCount(); i++) {
 			empDetails.getComponent(i).setFont(font1);
@@ -905,9 +907,9 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 		JPanel dialog = new JPanel(new MigLayout());
 
 		setJMenuBar(menuBar());
-		dialog.add(searchPanel(), "width 400:400:400, growx, pushx");
+		dialog.add(searchPanel(), "width 400:400:400, " +gp);
 		dialog.add(navigPanel(), "width 150:150:150, wrap");
-		dialog.add(buttonPanel(), "growx, pushx, span 2,wrap");
+		dialog.add(buttonPanel(), gp+", span 2,wrap");
 		dialog.add(detailsPanel(), "gap top 30, gap left 150, center");
 
 		JScrollPane scrollPane = new JScrollPane(dialog);

@@ -18,15 +18,6 @@ public class Employee{
 	private boolean fullTime;
 
 	public Employee() {
-		
-		this.employeeId = 0;
-		this.pps = "";
-		this.surname = "";
-		this.firstName = "";
-		this.gender = '\0';
-		this.department = "";
-		this.salary = 0;
-		this.fullTime = false;
 	}
 
 	public Employee(int employeeId, String pps, String surname, String firstName, char gender, String department, double salary,

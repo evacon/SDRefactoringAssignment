@@ -240,7 +240,7 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 				else
 					field.setDocument(new JTextFieldLimit(20));
 				field.getDocument().addDocumentListener(this);
-			} // end if
+			} 
 			else if (empDetails.getComponent(i) instanceof JComboBox) {
 				empDetails.getComponent(i).setBackground(Color.WHITE);
 				empDetails.getComponent(i).setEnabled(false);
@@ -266,7 +266,8 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 		searchBySurnameField.setText("");
 
 		if (thisEmployee == null||thisEmployee.getEmployeeId() == 0) {
-		} else {
+		} 
+		else {
 			
 			while (!found && countGender < gender.length - 1) {
 				if (Character.toString(thisEmployee.getGender()).equalsIgnoreCase(gender[countGender]))
@@ -586,10 +587,6 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 
 	private boolean checkInput() {
 		boolean valid = true;
-		if (ppsField.isEditable() && ppsField.getText().trim().isEmpty()) {
-			ppsField.setBackground(new Color(255, 150, 150));
-			valid = false;
-		} 
 
 		if (ppsField.isEditable() && correctPps(ppsField.getText().trim(), currentByteStart)) {
 			ppsField.setBackground(new Color(255, 150, 150));

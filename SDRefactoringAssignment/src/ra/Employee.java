@@ -7,6 +7,7 @@ package ra;
  */
 
 public class Employee{
+	
 	private int employeeId;
 	private String pps;
 	private String surname;
@@ -17,6 +18,7 @@ public class Employee{
 	private boolean fullTime;
 
 	public Employee() {
+		
 		this.employeeId = 0;
 		this.pps = "";
 		this.surname = "";
@@ -29,6 +31,7 @@ public class Employee{
 
 	public Employee(int employeeId, String pps, String surname, String firstName, char gender, String department, double salary,
 			boolean fullTime) {
+		
 		this.employeeId = employeeId;
 		this.pps = pps;
 		this.surname = surname;

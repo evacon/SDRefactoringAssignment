@@ -12,12 +12,15 @@ import javax.swing.*;
 import net.miginfocom.swing.MigLayout;
 
 public class AddRecordDialog extends JDialog implements ActionListener {
+	
 	private JTextField idField, ppsField, surnameField, firstNameField, salaryField;
 	private JComboBox<String> genderCombo, departmentCombo, fullTimeCombo;
 	private JButton save, cancel;
 	private EmployeeDetails parent;
+	EmployeeDetailsValidation edv;
 
 	public AddRecordDialog(EmployeeDetails parent) {
+		
 		setTitle("Add Record");
 		setModal(true);
 		this.parent = parent;
@@ -77,11 +80,16 @@ public class AddRecordDialog extends JDialog implements ActionListener {
 		cancel.addActionListener(this);
 
 		empDetails.add(buttonPanel, "span 2, " + gpw );
+		
 		for (int i = 0; i < empDetails.getComponentCount(); i++) {
+			
 			empDetails.getComponent(i).setFont(this.parent.font1);
+			
 			if (empDetails.getComponent(i) instanceof JComboBox) {
+				
 				empDetails.getComponent(i).setBackground(Color.WHITE);
 			}
+			
 			else if(empDetails.getComponent(i) instanceof JTextField){
 				field = (JTextField) empDetails.getComponent(i);
 				if(field == ppsField)
@@ -90,11 +98,13 @@ public class AddRecordDialog extends JDialog implements ActionListener {
 				field.setDocument(new JTextFieldLimit(20));
 			}
 		}
+		
 		idField.setText(Integer.toString(this.parent.getNextFreeId()));
 		return empDetails;
 	}
 
 	public void addRecord() {
+		
 		boolean fullTime = false;
 		Employee theEmployee;
 
@@ -110,6 +120,7 @@ public class AddRecordDialog extends JDialog implements ActionListener {
 	}
 
 	public boolean checkInput() {
+		
 		boolean valid = true;
 		final Color bg = new Color(255, 150, 150);
 		
@@ -117,7 +128,7 @@ public class AddRecordDialog extends JDialog implements ActionListener {
 			ppsField.setBackground(bg);
 			valid = false;
 		}
-		if (this.parent.correctPps(this.ppsField.getText().trim(), -1)) {
+		if (edv.correctPps(this.ppsField.getText().trim(), -1)) {
 			ppsField.setBackground(bg);
 			valid = false;
 		}
@@ -137,7 +148,9 @@ public class AddRecordDialog extends JDialog implements ActionListener {
 			departmentCombo.setBackground(bg);
 			valid = false;
 		}
+		
 		try {
+			
 			Double.parseDouble(salaryField.getText());
 			
 			if (Double.parseDouble(salaryField.getText()) < 0) {
@@ -157,6 +170,7 @@ public class AddRecordDialog extends JDialog implements ActionListener {
 	}
 
 	public void setToWhite() {
+		
 		ppsField.setBackground(Color.WHITE);
 		surnameField.setBackground(Color.WHITE);
 		firstNameField.setBackground(Color.WHITE);

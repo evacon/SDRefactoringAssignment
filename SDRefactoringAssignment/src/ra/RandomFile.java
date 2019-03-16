@@ -67,16 +67,15 @@ public class RandomFile {
 
 	// Add records to file
 	public long addRecords(Employee employeeToAdd) {
-		Employee newEmployee = employeeToAdd;
 		long currentRecordStart = 0;
 
 		RandomAccessEmployeeRecord record;
 
 		try 
 		{
-			record = new RandomAccessEmployeeRecord(newEmployee.getEmployeeId(), newEmployee.getPps(),
-					newEmployee.getSurname(), newEmployee.getFirstName(), newEmployee.getGender(),
-					newEmployee.getDepartment(), newEmployee.getSalary(), newEmployee.getFullTime());
+			record = new RandomAccessEmployeeRecord(employeeToAdd.getEmployeeId(), employeeToAdd.getPps(),
+					employeeToAdd.getSurname(), employeeToAdd.getFirstName(), employeeToAdd.getGender(),
+					employeeToAdd.getDepartment(), employeeToAdd.getSalary(), employeeToAdd.getFullTime());
 
 			output.seek(output.length());
 			record.write(output);
@@ -90,16 +89,14 @@ public class RandomFile {
 	}
 	//Change details for existing records
 	public void changeRecords(Employee newDetails, long byteToStart) {
-		long currentRecordStart = byteToStart;
 		RandomAccessEmployeeRecord record;
-		Employee oldDetails = newDetails;
 		try
 		{
-			record = new RandomAccessEmployeeRecord(oldDetails.getEmployeeId(), oldDetails.getPps(),
-					oldDetails.getSurname(), oldDetails.getFirstName(), oldDetails.getGender(),
-					oldDetails.getDepartment(), oldDetails.getSalary(), oldDetails.getFullTime());
+			record = new RandomAccessEmployeeRecord(newDetails.getEmployeeId(), newDetails.getPps(),
+					newDetails.getSurname(), newDetails.getFirstName(), newDetails.getGender(),
+					newDetails.getDepartment(), newDetails.getSalary(), newDetails.getFullTime());
 
-			output.seek(currentRecordStart);
+			output.seek(byteToStart);
 			record.write(output);
 		}
 		catch (IOException ioException) {

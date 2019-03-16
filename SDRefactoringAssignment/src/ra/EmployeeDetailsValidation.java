@@ -16,7 +16,7 @@ public class EmployeeDetailsValidation {
 	Employee currentEmployee;
 	JComboBox<String> genderCombo, departmentCombo, fullTimeCombo;
 	JTextField idField, ppsField, surnameField, firstNameField, salaryField;
-	EmployeeDetails ed;
+	EmployeeDetails ed = new EmployeeDetails();
 	
 	public boolean correctPps(String pps, long currentByte) {
 		boolean ppsExist = false;

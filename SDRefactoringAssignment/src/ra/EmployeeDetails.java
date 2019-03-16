@@ -52,7 +52,7 @@ public class EmployeeDetails extends JFrame implements ActionListener, ItemListe
 	String[] fullTime = { "", "Yes", "No" };
 	String gp = "growx, pushx";
 	String gpw = "growx, pushx, wrap";
-	EmployeeDetailsValidation edv;
+	EmployeeDetailsValidation edv = new EmployeeDetailsValidation();
 
 	private JMenuBar menuBar() {
 		

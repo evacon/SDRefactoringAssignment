@@ -17,7 +17,7 @@ public class AddRecordDialog extends JDialog implements ActionListener {
 	private JComboBox<String> genderCombo, departmentCombo, fullTimeCombo;
 	private JButton save, cancel;
 	private EmployeeDetails parent;
-	EmployeeDetailsValidation edv;
+	EmployeeDetailsValidation edv = new EmployeeDetailsValidation();
 
 	public AddRecordDialog(EmployeeDetails parent) {
 		

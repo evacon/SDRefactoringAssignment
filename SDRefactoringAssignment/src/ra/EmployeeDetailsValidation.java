@@ -18,7 +18,7 @@ public class EmployeeDetailsValidation {
 	JTextField idField, ppsField, surnameField, firstNameField, salaryField;
 	EmployeeDetails ed;
 	
-	public static boolean correctPps(String pps, long currentByte) {
+	public boolean correctPps(String pps, long currentByte) {
 		boolean ppsExist = false;
 		if (pps.length() == 8 || pps.length() == 9) {
 			if (Character.isDigit(pps.charAt(0)) && Character.isDigit(pps.charAt(1))

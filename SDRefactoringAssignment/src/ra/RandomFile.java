@@ -127,7 +127,7 @@ public class RandomFile {
 			input = new RandomAccessFile(fileName, "r");
 		} 
 		catch (IOException ioException) {
-			JOptionPane.showMessageDialog(null, "File is not suported!");
+			JOptionPane.showMessageDialog(null, "File is not supported!");
 		} 
 	} 
 
